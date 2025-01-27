@@ -1,0 +1,176 @@
+<html>
+<head>
+    <title>INSPECTO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+<body class="bg-gradient-to-b from-gray-800 to-gray-900 text-white">
+    <header class="bg-gray-900 p-4 flex justify-between items-center">
+        <h1 class="text-green-500 text-2xl font-bold">INSPECTO</h1>
+        <div class="flex items-center">
+            <nav class="space-x-10 hidden md:flex">
+                <a href="#" class="text-white">Dashboard</a>
+                <a href="#" class="text-white">About</a>
+                <a href="#" class="text-white">Developer</a>
+                <a href="#" class="text-white">News</a>
+                <a href="#" class="text-white">Settings</a>
+            </nav>
+            <div id="mobile-menu-toggle" class="md:hidden cursor-pointer">
+                <i class="fas fa-ellipsis-v text-white text-2xl"></i> <!-- Three dots icon -->
+            </div>
+        </div>
+    </header>
+    <div id="mobile-menu" class="hidden bg-gray-900 md:hidden">
+        <nav class="flex flex-col space-y-2 p-4">
+            <a href="#" class="text-white">Dashboard</a>
+            <a href="#" class="text-white">About</a>
+            <a href="#" class="text-white">Developer</a>
+            <a href="#" class="text-white">News</a>
+            <a href="#" class="text-white">Settings</a>
+        </nav>
+    </div>
+    </header>
+    <main class="p-8">
+        <section class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-green-500 text-xl font-bold mb-4">IP Address | URL:</h2>
+            <form id="scanForm" class="bg-gray-700 p-4 rounded-lg mb-4">
+                <label for="username" class="block text-sm font-bold text-gray-300 mb-1">DOMAIN:</label>
+                <input type="text" placeholder="Ex: 192.168.1.1 example.com" class="w-full p-2 mb-4 bg-gray-700 text-white rounded">
+                <div class="mb-4">
+                    <label for="scanType" class="block text-sm font-bold text-gray-300 mb-1">Scan Type:</label>
+                    <select id="scanType" class="w-full p-2 rounded bg-gray-600 text-gray-200">
+                        <option value="1">Security Function Scan</option>
+                        <option value="2">Automated Scan</option>
+                        <option value="3">Web Scan</option>
+                        <option value="4">Port Scan</option>
+                        <option value="5">Insta Scan</option>
+                        <option value="6">CVSS Score</option>
+                        <option value="7">Graphs Report</option>
+                        <option value="8">Detailed Reports</option>
+            </select>
+        </div>
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-bold text-gray-300 mb-1">CLIENT:</label>
+                    <input type="text" id="username" class="w-full p-2 rounded bg-gray-600 text-gray-200" placeholder="Enter your username" required>
+                </div>
+                <div class="mb-4">
+                    <label for="scanName" class="block text-sm font-bold text-gray-300 mb-1">Scan Name:</label>
+                    <input type="text" id="scanName" class="w-full p-2 rounded bg-gray-600 text-gray-200" placeholder="Enter scan name" required>
+                </div>
+                <div class="mb-4">
+                    <label for="description" class="block text-sm font-bold text-gray-300 mb-1">Description:</label>
+                    <textarea id="description" rows="3" class="w-full p-2 rounded bg-gray-600 text-gray-200" placeholder="Enter description of the scan" required></textarea>
+                </div>
+            <button class="bg-green-500 text-white px-4 py-2 rounded">Start Scan</button>
+        </form>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">Vulnerability Assessment</h3>
+                <p class="mb-4">Assess your system against known vulnerabilities and best practices.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Start Assessment</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">Malware Detection</h3>
+                <p class="mb-4">Scan your system for malware and potential threats.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Run Malware Scan</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">Compliance Checks</h3>
+                <p class="mb-4">Verify compliance with industry standards and regulations.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Start Compliance Check</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">Network Vulnerability Mapping</h3>
+                <p class="mb-4">Visualize network vulnerabilities and their impact.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Map Vulnerabilities</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">Security Recommendations</h3>
+                <p class="mb-4">Receive actionable recommendations based on scan results.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Get Recommendations</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">Patch Management</h3>
+                <p class="mb-4">Manage and track patches for vulnerabilities.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Manage Patches</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">Threat Intelligence Integration</h3>
+                <p class="mb-4">Integrate threat intelligence feeds for enhanced scanning.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Integrate Intelligence</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">Incident Response Toolkit</h3>
+                <p class="mb-4">Access tools and resources for incident response.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Access Toolkit</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-green-500 text-lg font-bold mb-2">AI Security Chatbot</h3>
+                <p class="mb-4">Get instant answers to your security questions from our AI-powered chatbot.</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">Chat with AI</button>
+            </div>
+
+        </section>
+        <section class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-green-500 text-xl font-bold mb-4">Recent Scans</h2>
+            
+            <div class="bg-gray-700 p-4 rounded-lg mb-4">
+                <h3 class="text-lg font-bold">User: John Doe</h3>
+                <p class="mb-2">Scan Type: Port Scanning</p>
+                <p class="mb-2">Target: 192.168.1.1</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">View Report</button>
+                <span class="text-green-500 float-right">Completed</span>
+            </div>
+        
+            <div class="bg-gray-700 p-4 rounded-lg mb-4">
+                <h3 class="text-lg font-bold">User: Jane Smith</h3>
+                <p class="mb-2">Scan Type: Web Application Assessment</p>
+                <p class="mb-2">Target: example.com</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">View Report</button>
+                <span class="text-green-500 float-right">Completed</span>
+            </div>
+        
+            <div class="bg-gray-700 p-4 rounded-lg mb-4">
+                <h3 class="text-lg font-bold">User: Alex Johnson</h3>
+                <p class="mb-2">Scan Type: Vulnerability Assessment</p>
+                <p class="mb-2">Target: 10.0.0.5</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">View Report</button>
+                <span class="text-green-500 float-right">Completed</span>
+            </div>
+        
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <h3 class="text-lg font-bold">User: Emily Davis</h3>
+                <p class="mb-2">Scan Type: Network Scanning</p>
+                <p class="mb-2">Target: office-network.local</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded">View Report</button>
+                <span class="text-green-500 float-right">In Progress</span>
+            </div>
+        
+            <div class="mt-6">
+                <h3 class="text-lg font-bold">Scan History</h3>
+                <p class="text-sm text-gray-400">Total Scans Today: <span class="text-green-500">4</span></p>
+                <p class="text-sm text-gray-400">Total Scans This Week: <span class="text-green-500">15</span></p>
+                <p class="text-sm text-gray-400">Total Scans This Month: <span class="text-green-500">50</span></p>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-900 p-4 text-center">
+        <p class="text-gray-500">&copy; 2025 INSPECTO. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

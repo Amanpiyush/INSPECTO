@@ -1,0 +1,359 @@
+/* General Styles */
+body {
+    font-family: 'Courier New', monospace; /* Classic hacker font */
+    background: radial-gradient(circle at center, #0a0b0d, #000000); /* Dark radial gradient background */
+    color: #dfe1e3; /* Light grey color for text */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    animation: fadeIn 1s ease-in; /* Fade-in effect on load */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Link Styles */
+a {
+    color: #66fcf1; /* Neon cyan for links */
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #ff0055; /* Bright red underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+header h1 {
+    color: #66fcf1; /* Neon cyan */
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    animation: pulse 1.5s infinite; /* Pulse effect */
+}
+
+nav a {
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff0055; /* Bright red on hover */
+}
+
+/* Main Section Styles */
+main {
+    padding: 2rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #66fcf1; /* Neon cyan */
+    margin-bottom: 1rem;
+    text-shadow: 0px 0px 20px rgba(0, 255, 255, 0.6); /* Glowing effect */
+}
+
+/* Form Styles */
+form {
+    background: rgba(20, 20, 20, 0.9); /* Darker form background */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* Subtle glow */
+    animation: slideIn 0.5s ease forwards; /* Slide-in effect for forms */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    background: rgba(255, 255, 255, 0.1); /* Dark transparent background */
+    color: #c5c6c7; /* Light grey text */
+    border: 1px solid #66fcf1; /* Neon cyan border */
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    width: 100%;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    background: rgba(255, 255, 255, 0.2); /* Slightly lighter background on focus */
+    border-color: #ff0055; /* Bright red border on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Card Styles */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background: rgba(20, 20, 20, 0.85); /* Darker background for cards */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 6px 12px rgba(0, 255, 255, 0.2); /* Subtle glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.5); /* More pronounced glow on hover */
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #66fcf1; /* Neon cyan */
+    margin-bottom: 0.75rem;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #b9b8b8; /* Slightly lighter grey */
+    margin-bottom: 1rem;
+}
+
+/* Button Styles */
+button {
+    background: #ff0055; /* Bright red for buttons */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: #d6004d; /* Darker red on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+button:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Recent Scans Section */
+span.text-neon-green {
+    color: #66fcf1; /* Neon color for text */
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    padding: 1rem;
+    color: #e6e6e6; /* Light grey */
+    font-size: 0.9rem;
+    border-top: 1px solid #66fcf1; /* Neon cyan border at top */
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Additional Styles for Hacker Theme */
+.scan-type {
+    background: rgba(0, 0, 0, 0.6); /* Darker background for scan type selection */
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Neon glow effect */
+    transition: background 0.3s ease;
+}
+
+.scan-type:hover {
+    background: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Adjust heading size on smaller screens */
+    }
+
+    h2 {
+        font-size: 2rem; /* Adjust heading size on smaller screens */
+    }
+}
+
+
+div.bg-gray-800:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.5); /* More pronounced glow on hover */
+}
+
+
+select#scanType {
+    background: rgba(20, 20, 20, 0.85); /* Dark background */
+    color: #66fcf1; /* Neon cyan text color */
+    font-weight: bold; /* Bold text */
+    padding: 0.75rem; /* Padding for better touch target */
+    border: 2px solid #66fcf1; /* Cyan border */
+    border-radius: 0.3rem; /* Rounded corners */
+    transition: background 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+    appearance: none; /* Remove default styling */
+    cursor: pointer; /* Change cursor to pointer */
+    width: 100%; /* Full width */
+}
+
+select#scanType:hover {
+    background: rgba(20, 20, 20, 0.95); /* Slightly lighter on hover */
+    border-color: #ff0055; /* Change border color on hover */
+}
+
+select#scanType:focus {
+    outline: none; /* Remove outline */
+    border-color: #ff0055; /* Bright red border on focus */
+    background: rgba(20, 20, 20, 0.95); /* Slightly lighter background on focus */
+}
+
+
+/* Extra Code*/
+
+form#scanForm {
+    background: rgba(50, 50, 50, 0.82); /* Darker background for the form */
+    padding: 2rem; /* Increased padding for better spacing */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* Neon glow effect */
+    margin-bottom: 1.5rem; /* Margin at the bottom */
+}
+
+/* Label Styles */
+form#scanForm label {
+    font-size: 0.9rem; /* Slightly larger font size for labels */
+    font-weight: bold; /* Bold text for labels */
+    color: #c5c6c7; /* Light grey color for labels */
+    margin-bottom: 0.5rem; /* Margin below labels */
+}
+
+/* Input Styles */
+form#scanForm input[type="text"],
+form#scanForm textarea,
+form#scanForm select {
+    background: rgba(28, 28, 28, 0.9); /* Dark transparent background */
+    color: #c5c6c7; /* Light grey text */
+    border: 2px solid #66fcf1; /* Neon cyan border */
+    border-radius: 0.3rem; /* Rounded corners */
+    padding: 0.75rem; /* Increased padding for inputs */
+    width: 100%; /* Full width */
+    transition: background 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Input Focus and Hover Effects */
+form#scanForm input[type="text"]:focus,
+form#scanForm textarea:focus,
+form#scanForm select:focus {
+    outline: none; /* Remove outline */
+    border-color: #ff0055; /* Bright red border on focus */
+    background: rgb(16, 16, 16); /* Slightly darker on focus */
+}
+
+/* Button Styles */
+form#scanForm button {
+    background: #ff0055; /* Bright red for buttons */
+    color: #f5f5f5; /* Light text */
+    padding: 0.75rem 1.5rem; /* Padding for buttons */
+    border: none; /* No border */
+    border-radius: 0.3rem; /* Rounded corners */
+    font-size: 1rem; /* Font size for buttons */
+    font-weight: bold; /* Bold text for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+form#scanForm button:hover {
+    background: #d6004d; /* Darker red on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+
+
